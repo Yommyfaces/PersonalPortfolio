@@ -1,6 +1,8 @@
 /*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lobster&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -97,7 +99,7 @@ section .title::after{
 }
 .navbar .logo a{
     color: #fff;
-    font-size: 35px;
+    font-size: 50px;
     font-weight: 700;
     font-family: 'Dancing Script', cursive;
 }
@@ -116,7 +118,7 @@ section .title::after{
     display: block;
     color: #fff;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
     margin-left: 25px;
     transition: color 0.3s ease;
 }
