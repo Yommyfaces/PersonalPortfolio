@@ -219,7 +219,7 @@ section .title::after{
 
 /* about section styling */
 .about .title::after{
-    content: "who I am";
+    content: "Who we are";
 }
 .about .about-content .left{
     width: 45%;
@@ -273,7 +273,7 @@ section .title::after{
 .services .title::after,
 .teams .title::after{
     background: #111;
-    content: "What I have done";
+    content: "What we deliver";
 }
 .services .serv-content .card{
     width: calc(33% - 20px);
@@ -310,7 +310,7 @@ section .title::after{
 /* skills section styling */
 
 .skills .title::after{
-    content: "What I know";
+    content: "What we know";
 }
 .skills .skills-content .column{
     width: calc(50% - 30px);
@@ -366,30 +366,28 @@ section .title::after{
     top: 0;
     background: crimson;
 }
-.skills-content .right .html::before{
-    width: 100%;
+.skills-content .right .cx::before{
+    width: 95%;
 }
-.skills-content .right .css::before{
-    width: 100%;
+.skills-content .right .cxreg::before{
+    width: 90%;
 }
-.skills-content .right .js::before{
-    width: 80%;
-}
-.skills-content .right .python::before{
-    width: 100%;
-}
-
 .skills-content .right .mssql::before{
+    width: 90%;
+}
+.skills-content .right .uat::before{
     width: 100%;
 }
-
-.skills-content .right .react::before{
-    width: 100%;
+.skills-content .right .ba::before{
+    width: 90%;
+}
+.skills-content .right .training::before{
+    width: 95%;
 }
 
 /* teams section styling */
 .teams .title::after{
-    content: "Who works with me";
+    content: "Where we have delivered";
 }
 .teams .carousel .card{
     background: #222;
@@ -686,4 +684,25 @@ footer span a:hover{
         font-size: 23px;
         line-height: 38px;
     }
+}
+
+/* --- 2Tech additions --- */
+.services .serv-content{
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.services .serv-content .card{
+    margin-bottom: 20px;
+}
+.services .serv-content .card .text{
+    font-size: 20px;
+}
+.teams .carousel .card .record-icon{
+    font-size: 60px;
+    color: crimson;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+.teams .carousel .card:hover .record-icon{
+    color: #fff;
 }
