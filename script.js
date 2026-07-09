@@ -90,8 +90,13 @@ $(document).ready(function(){
         }).done(function(){
             ack.removeClass('error').text('Thank you for contacting us, we aim to respond within 24 hours.').addClass('show');
             form.trigger('reset');
-        }).fail(function(){
-            ack.addClass('error').text('Sorry, something went wrong sending your message. Please email us directly at joeolumoye@yahoo.co.uk.').addClass('show');
+        }).fail(function(xhr){
+            var msg = 'Sorry, something went wrong sending your message. Please email us directly at joeolumoye@yahoo.co.uk.';
+            try {
+                var r = JSON.parse(xhr.responseText);
+                if (r && r.message) { msg = r.message; }
+            } catch(err) {}
+            ack.addClass('error').text(msg).addClass('show');
         }).always(function(){
             btn.prop('disabled', false).text('Send message');
         });
