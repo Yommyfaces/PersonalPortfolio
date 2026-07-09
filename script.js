@@ -74,31 +74,11 @@ $(document).ready(function(){
     });
 });
 
-// contact form: AJAX submit with on-screen acknowledgment
+// show acknowledgment after FormSubmit redirects back with ?sent=1
 $(document).ready(function(){
-    $('#contact-form').on('submit', function(e){
-        e.preventDefault();
-        var form = $(this);
-        var ack = $('#form-ack');
-        var btn = form.find('button[type=submit]');
-        btn.prop('disabled', true).text('Sending...');
-        $.ajax({
-            url: 'https://formsubmit.co/ajax/joeolumoye@yahoo.co.uk',
-            method: 'POST',
-            data: form.serialize(),
-            dataType: 'json'
-        }).done(function(){
-            ack.removeClass('error').text('Thank you for contacting us, we aim to respond within 24 hours.').addClass('show');
-            form.trigger('reset');
-        }).fail(function(xhr){
-            var msg = 'Sorry, something went wrong sending your message. Please email us directly at joeolumoye@yahoo.co.uk.';
-            try {
-                var r = JSON.parse(xhr.responseText);
-                if (r && r.message) { msg = r.message; }
-            } catch(err) {}
-            ack.addClass('error').text(msg).addClass('show');
-        }).always(function(){
-            btn.prop('disabled', false).text('Send message');
-        });
-    });
+    if (window.location.search.indexOf('sent=1') !== -1) {
+        $('#form-ack').removeClass('error').text('Thank you for contacting us, we aim to respond within 24 hours.').addClass('show');
+        var el = document.getElementById('contact');
+        if (el) { el.scrollIntoView(); }
+    }
 });
