@@ -69,13 +69,14 @@ section .title::before{
 }
 section .title::after{
     position: absolute;
-    bottom: -8px;
+    bottom: -12px;
     left: 50%;
     font-size: 20px;
     color: crimson;
     padding: 0 5px;
     background: #fff;
     transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 /* navbar styling */
@@ -242,7 +243,7 @@ section .title::after{
     color: crimson;
 }
 .about .about-content .right p{
-    text-align: justify;
+    text-align: left;
 }
 .about .about-content .right a{
     display: inline-block;
@@ -321,7 +322,7 @@ section .title::after{
     margin-bottom: 10px;
 }
 .skills .skills-content .left p{
-    text-align: justify;
+    text-align: left;
 }
 .skills .skills-content .left a{
     display: inline-block;
@@ -461,7 +462,7 @@ section .title::after{
     margin-bottom: 10px;
 }
 .contact .contact-content .left p{
-    text-align: justify;
+    text-align: left;
 }
 .contact .contact-content .left .icons{
     margin: 10px 0;
@@ -705,4 +706,35 @@ footer span a:hover{
 }
 .teams .carousel .card:hover .record-icon{
     color: #fff;
+}
+
+
+/* --- mobile fixes --- */
+@media (max-width: 690px){
+    section .title{
+        font-size: 32px;
+    }
+    section .title::after{
+        font-size: 15px;
+        bottom: -10px;
+    }
+}
+/* form acknowledgment message */
+.contact .form-ack{
+    display: none;
+    margin-top: 15px;
+    padding: 12px 15px;
+    background: #e6f6e9;
+    color: #1e7d32;
+    border-left: 4px solid #1e7d32;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.contact .form-ack.show{
+    display: block;
+}
+.contact .form-ack.error{
+    background: #fdecea;
+    color: #b71c1c;
+    border-left-color: #b71c1c;
 }

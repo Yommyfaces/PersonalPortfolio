@@ -36,15 +36,17 @@ $(document).ready(function(){
     // typing text animation script
     var typed = new Typed(".typing", {
         strings: ["Civica Cx Implementation", "Cx Regulatory Services", "SSRS Reporting", "UAT \u0026 Test Delivery", "Training \u0026 Knowledge Transfer"],
-        typeSpeed: 100,
-        backSpeed: 60,
+        typeSpeed: 150,
+        backSpeed: 80,
+        backDelay: 2000,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
         strings: ["Civica Cx Implementation", "Cx Regulatory Services", "SSRS Reporting", "UAT \u0026 Test Delivery", "Training \u0026 Knowledge Transfer"],
-        typeSpeed: 100,
-        backSpeed: 60,
+        typeSpeed: 150,
+        backSpeed: 80,
+        backDelay: 2000,
         loop: true
     });
 
@@ -69,5 +71,29 @@ $(document).ready(function(){
                 nav: false
             }
         }
+    });
+});
+
+// contact form: AJAX submit with on-screen acknowledgment
+$(document).ready(function(){
+    $('#contact-form').on('submit', function(e){
+        e.preventDefault();
+        var form = $(this);
+        var ack = $('#form-ack');
+        var btn = form.find('button[type=submit]');
+        btn.prop('disabled', true).text('Sending...');
+        $.ajax({
+            url: 'https://formsubmit.co/ajax/joeolumoye@yahoo.co.uk',
+            method: 'POST',
+            data: form.serialize(),
+            dataType: 'json'
+        }).done(function(){
+            ack.removeClass('error').text('Thank you for contacting us, we aim to respond within 24 hours.').addClass('show');
+            form.trigger('reset');
+        }).fail(function(){
+            ack.addClass('error').text('Sorry, something went wrong sending your message. Please email us directly at joeolumoye@yahoo.co.uk.').addClass('show');
+        }).always(function(){
+            btn.prop('disabled', false).text('Send message');
+        });
     });
 });
