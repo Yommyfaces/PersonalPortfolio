@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 112" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+  <title>2Tech Consultancy Limited</title>
+  <g stroke="#16161D" stroke-width="5" stroke-linecap="round"><path d="M50 52 L18 22 M50 52 L84 24 M50 52 L50 92 M50 52 L14 76"/></g>
+  <circle cx="18" cy="22" r="7" fill="#fff" stroke="#16161D" stroke-width="4"/>
+  <circle cx="84" cy="24" r="7" fill="#DC143C"/>
+  <circle cx="50" cy="92" r="7" fill="#fff" stroke="#16161D" stroke-width="4"/>
+  <circle cx="14" cy="76" r="6" fill="#16161D"/>
+  <circle cx="50" cy="52" r="15" fill="#DC143C"/>
+  <circle cx="50" cy="52" r="6" fill="#fff"/>
+  <text x="106" y="50" font-size="40" font-weight="700" fill="#16161D" letter-spacing="-1">2Tech</text>
+  <text x="108" y="72" font-size="12.5" font-weight="600" fill="#DC143C" letter-spacing="3.6">CONSULTANCY LIMITED</text>
+  <text x="108" y="94" font-size="13" font-weight="500" font-style="italic" fill="#6B6B78">Smarter systems. Safer homes.</text>
+</svg>
